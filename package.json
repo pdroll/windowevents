@@ -1,0 +1,16 @@
+{
+  "name": "WindowEvents",
+  "version": "1.0.0",
+  "description": "Simple wrapper around common window events",
+  "main": "windowevents.js",
+  "license": "MIT",
+  "dependencies": {
+    "covjs": "^1.2.0",
+    "lodash.debounce": "^4.0.8"
+  },
+  "devDependencies": {
+    "eslint": "^3.11.1",
+    "eslint-config-airbnb-base": "^10.0.1",
+    "eslint-plugin-import": "^2.2.0"
+  }
+}
