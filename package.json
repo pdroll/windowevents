@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "covjs": "^1.2.0",
-    "lodash.debounce": "^4.0.8"
+    "debounce": "^1.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.18.2",

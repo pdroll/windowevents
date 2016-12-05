@@ -1,4 +1,5 @@
 import publisher from 'covjs';
+import debounce from 'debounce';
 
 class WindowEvents {
 
@@ -7,6 +8,8 @@ class WindowEvents {
       scrollDelay: 25,
       resizeDelay: 100,
     };
+
+    console.log(debounce);
 
     this.options = opts ? { ...defaultOptions, ...opts } : defaultOptions;
     this.publisher = publisher;
