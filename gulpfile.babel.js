@@ -28,7 +28,7 @@ gulp.task('scripts', () => {
     const bundler = browserify({
         entries: 'src/index.js',
         debug: true,
-        standalone: config.filename,
+        standalone: 'WindowEvents',
     });
 
     // Transform through Babel
