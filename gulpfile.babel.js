@@ -43,7 +43,7 @@ gulp.task('scripts', () => {
     .pipe(source(config.filename + '.js'))
     .pipe(buffer())
     .pipe(gulp.dest('.'))
-    .pipe(uglify({ preserveComments : 'license'}))
+    .pipe(uglify())
     .pipe(rename(`${config.filename}.min.js`))
     .pipe(gulp.dest('.'));
 });

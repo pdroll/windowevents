@@ -1,3 +1,4 @@
+
  /*!
  * WindowEvents.js
  * @author Pete Droll <droll.p@gmail.com>
@@ -13,7 +14,7 @@ class WindowEvents {
 
   constructor(opts) {
     const defaultOptions = {
-      scrollDelay: 250,
+      scrollDelay: 100,
       resizeDelay: 100,
     };
 
@@ -44,6 +45,22 @@ class WindowEvents {
       false,
       // Throttled function
       scrollEvents.throttledListener,
+    ));
+    window.addEventListener('resize', debounce(
+      // Delay
+      this.options.resizeDelay,
+      // At beginning
+      true,
+      // Debounced function
+      resizeEvents.debouncedListener,
+    ));
+    window.addEventListener('resize', throttle(
+      // Delay
+      this.options.resizeDelay,
+      // No Trailing. If false, will get called one last time after the last throttled call
+      false,
+      // Throttled function
+      resizeEvents.throttledListener,
     ));
   }
 }
