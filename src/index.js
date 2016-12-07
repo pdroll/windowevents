@@ -15,7 +15,7 @@ class WindowEvents {
   constructor(opts) {
     const defaultOptions = {
       scrollDelay: 100,
-      resizeDelay: 100,
+      resizeDelay: 350,
     };
 
     this.options = opts ? { ...defaultOptions, ...opts } : defaultOptions;

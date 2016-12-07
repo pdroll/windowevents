@@ -2,7 +2,7 @@ class ScrollEvents {
   constructor(publisher, options, sizeRef) {
     this.signal = publisher.signal;
     this.options = options;
-    this.scrollTop = this.previousScrollTop = window.scrollY || window.pageYOffset;
+    this.scrollTop = this.lastScrollTop = window.scrollY || window.pageYOffset;
     this.windowSize = sizeRef;
     this.scrollTimeout = null;
 
@@ -14,7 +14,7 @@ class ScrollEvents {
     this.scrollTop = window.scrollY || window.pageYOffset;
     this.signal('scroll.start', [this.scrollTop]);
 
-    this.previousScrollTop = this.scrollTop;
+    this.lastScrollTop = this.scrollTop;
   }
 
   throttledListener() {
@@ -22,9 +22,9 @@ class ScrollEvents {
 
     this.signal('scroll', [this.scrollTop]);
 
-    if (this.scrollTop > this.previousScrollTop) {
+    if (this.scrollTop > this.lastScrollTop) {
       this.signal('scroll.down', [this.scrollTop]);
-    } else if (this.scrollTop < this.previousScrollTop) {
+    } else if (this.scrollTop < this.lastScrollTop) {
       this.signal('scroll.up', [this.scrollTop]);
     }
 
@@ -41,7 +41,7 @@ class ScrollEvents {
       this.signal('scroll.stop', [this.scrollTop]);
     }, this.options.scrollDelay + 1);
 
-    this.previousScrollTop = this.scrollTop;
+    this.lastScrollTop = this.scrollTop;
   }
 }
 
