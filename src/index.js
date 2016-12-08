@@ -60,6 +60,11 @@ class WindowEvents {
       // Throttled function
       resizeEvents.throttledListener,
     ));
+
+    this.getState = () => ({
+      ...resizeEvents.getState(),
+      ...scrollEvents.getState(),
+    });
   }
 }
 

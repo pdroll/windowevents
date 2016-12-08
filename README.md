@@ -64,7 +64,15 @@ var winEvents = new WindowEvents(options);
 | `scrollDelay` | int  | Number of milliseconds that the scroll events will be throttled. Default 100 |
 | `resizeDelay` | int  | Number of milliseconds that the resize events will be throttled. Default 350 |
 
+## Methods
 
+on, once, off, getState
+
+## Events
+
+### Scroll
+
+### Resize Events
 
 
 

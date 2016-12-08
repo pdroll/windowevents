@@ -12,6 +12,15 @@ class ResizeEvents {
     this.throttledListener = this.throttledListener.bind(this);
   }
 
+  getState() {
+    return {
+      height: this.height,
+      width: this.width,
+      scrollHeight: this.scrollHeight,
+      orientation: this.orientation,
+    };
+  }
+
   debouncedListener() {
     this.height = window.innerHeight;
     this.width = window.innerWidth;

@@ -10,6 +10,12 @@ class ScrollEvents {
     this.throttledListener = this.throttledListener.bind(this);
   }
 
+  getState() {
+    return {
+      scrollTop: this.scrollTop,
+    };
+  }
+
   debouncedListener() {
     this.scrollTop = window.scrollY || window.pageYOffset;
     this.signal('scroll.start', [this.scrollTop]);
