@@ -8,35 +8,35 @@ You can install this in a couple ways:
 
 1. Install and load as an NPM module
 
-  ### Install
-  ```shell
-  npm install windowevents --save
-  ```
-  Or if you use [Yarn](https://yarnpkg.com/)
-  ```shell
-  yarn add windowevents
-  ```
+### Install
+```shell
+npm install windowevents --save
+```
+Or if you use [Yarn](https://yarnpkg.com/)
+```shell
+yarn add windowevents
+```
 
-  ### Load library in your JS file:
-  ```javascript
-  var WindowEvents = require('windowevents');
-  ```
+### Load library in your JS file:
+```javascript
+var WindowEvents = require('windowevents');
+```
 
 2. OR Install using a `<script>` tag:
 
-  Include library script tag before your application JS.
+Include library script tag before your application JS.
 
-  ```html
-  <script src="windowevents.min.js"></script>
-  ```
+```html
+<script src="windowevents.min.js"></script>
+```
 
-  After that has loaded, a  `WindowEvents` variable will be available on the `window` object.
+After that has loaded, a  `WindowEvents` variable will be available on the `window` object.
 
-  ```javascript
-  // WindowEvents variable is
-  // already loaded for you
-  console.log(WindowEvents);
-  ```
+```javascript
+// WindowEvents variable is
+// already loaded for you
+console.log(WindowEvents);
+```
 
 ## Usage
 
