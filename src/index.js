@@ -22,9 +22,7 @@ class WindowEvents {
     this.on = publisher.on;
     this.once = publisher.once;
     this.off = publisher.off;
-  }
 
-  listen() {
     const resizeEvents = new ResizeEvents(publisher, this.options);
     // Pass resizeEvents object to scroll listener
     // in order to have access to window height, width
