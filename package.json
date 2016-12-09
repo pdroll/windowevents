@@ -4,6 +4,10 @@
   "description": "Simple wrapper around common window events",
   "main": "windowevents.min.js",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pdroll/windowevents"
+  },
   "scripts": {
     "prestart": "yarn",
     "start": "gulp watch",
