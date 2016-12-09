@@ -1,5 +1,5 @@
 {
-  "name": "WindowEvents",
+  "name": "windowevents",
   "version": "0.1.1",
   "description": "Simple wrapper around common window events",
   "main": "windowevents.min.js",
