@@ -66,14 +66,106 @@ var winEvents = new WindowEvents(options);
 
 ## Methods
 
-on, once, off, getState
+### `winEvent.on(eventName, callback)`
+
+Subscribe to a window event.
+
+```javascript
+// Subscribe to the 'scroll.stop' event
+winEvents.on('scroll.stop', function(scrollTop) {
+    doSomething(scrollTop)
+});
+```
+
+
+### `winEvents.once(eventName, callback)`
+
+Subscribe to an event only once.
+
+```javascript
+// Function will only fire for first time you scroll to the bottom of the page
+winEvents.once('scroll.bottom', function(scrollTop) {
+    doSomethingOnce(data)
+});
+```
+
+### `winEvents.off(eventName)`
+
+Unsubscribe all listeners to an event:
+
+```javascript
+// unsubscribe from 'resize.stop'
+winEvents.off('resize.stop');
+```
+
+### `winEvents.off(eventName, listenerToken)`
+
+Unsubscribe one specific listener from a Covenant.
+
+You'll need to save the token returned by your call to `winEvents.on()`
+
+```javascript
+var firstListener = winEvents.on('scroll.down', function(scrollTop) {
+  console.log('We are scrolling down the page');
+});
+
+var secondListener = winEvents.on('scroll.down', function(scrollTop) {
+  console.log('Another listener for scrolling down');
+});
+
+// Unsubscribe just the first Listener
+winEvents.off('scroll.down', firstListener);
+
+// The first listener will no longer fire
+// when the window is scrolled down, but
+// the second listener will continue to work.
+```
+
+### `winEvents.getState()`
+
+Immediately get current size and scroll position of window. Returns an object with the following properties:
+
+- `width`
+- `height`
+- `orientation` ("portrait" or "landscape")
+- `scrollHeight`
+- `scrollTop`
 
 ## Events
 
-### Scroll
+The following events are available to subscribe to:
+
+### Scroll Events
+
+All scroll listeners will recieve one parameter, the interger of the current window scrollTop.
+
+|   Event Name    | Description |
+|-----------------|-------------|
+| `scroll.start`  | Scrolling has started. |
+| `scroll`        | Will fire while scrolling in either direction. Will be throttled and only fire once in every interval defined in the `scrollDelay` option. |
+| `scroll.down`   | Same as `scroll`, but will only fire if scrolling down. |
+| `scroll.up`     | Same as `scroll`, but will only fire if scrolling up. |
+| `scroll.bottom` | Will fire when scrolling has reached the bottom of the page. |
+| `scroll.top`    | Will fire when scrolling has reached the top of the page. |
+| `scroll.stop`   | Scrolling has stopped. |
 
 ### Resize Events
 
+
+All resize listeners will recieve one parameter, an object with the following properties:
+
+- `width`
+- `height`
+- `orientation` ("portrait" or "landscape")
+- `scrollHeight`
+
+|         Event Name          |   Description   |
+|-----------------------------|-----------------|
+| `resize.start`              | The window has started to be resized. |
+| `resize`                    | Will fire while the window is being resized. Will be throttled and only fire once in every interval defined in the `resizeDelay` option. |
+| `resize.orientationChange`  | Will fire when the window has been resized from portrait to landscape, or vice versa. |
+| `resize.scrollHeightChange` | Will fire when resizing has caused the `document.body.scrollHeight` to change.  |
+| `resize.stop`               | The window has stopped being resized. |
 
 
 
