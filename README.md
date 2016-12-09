@@ -85,7 +85,7 @@ Subscribe to an event only once.
 ```javascript
 // Function will only fire for first time you scroll to the bottom of the page
 winEvents.once('scroll.bottom', function(scrollTop) {
-    doSomethingOnce(data)
+    doSomethingOnce(scrollTop)
 });
 ```
 
@@ -100,7 +100,7 @@ winEvents.off('resize.stop');
 
 ### `winEvents.off(eventName, listenerToken)`
 
-Unsubscribe one specific listener from a Covenant.
+Unsubscribe one specific listener to an event.
 
 You'll need to save the token returned by your call to `winEvents.on()`
 
