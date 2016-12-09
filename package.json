@@ -4,6 +4,7 @@
   "description": "Simple wrapper around common window events",
   "main": "windowevents.min.js",
   "license": "MIT",
+  "author": "Pete Droll <droll.p@gmail.com> (https://github.com/pdroll/)",
   "repository": {
     "type": "git",
     "url": "https://github.com/pdroll/windowevents"
