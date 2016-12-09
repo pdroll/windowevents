@@ -1,7 +1,7 @@
 # WindowEvents.js
 Easily add event listeners to useful scroll and resize events: scroll start, scroll stop, resize stop, orientation change, and more.
 
-This library handles the throttling of the event listeners for you, does not require jQuery, is under 8KB in size.
+This library handles the throttling of the event listeners for you, does not require jQuery, and is under 8KB in size.
 
 ## Install
 You can install this in a couple ways:
@@ -29,7 +29,7 @@ var WindowEvents = require('windowevents');
 Include library script tag before your application JS.
 
 ```html
-<script src="windowevents.min.js"></script>
+<script src="https://unpkg.com/windowevents@0.1.2/windowevents.min.js"></script>
 ```
 
 After that has loaded, a  `WindowEvents` variable will be available on the `window` object.
@@ -66,7 +66,7 @@ var winEvents = new WindowEvents(options);
 
 ## Methods
 
-### `winEvent.on(eventName, callback)`
+### `winEvents.on(eventName, callback)`
 
 Subscribe to a window event.
 
