@@ -9,6 +9,7 @@ import debounce from 'throttle-debounce/debounce';
 import throttle from 'throttle-debounce/throttle';
 import ScrollEvents from './scroll';
 import ResizeEvents from './resize';
+import VisibilityEvents from './visibility';
 
 class WindowEvents {
 
@@ -27,6 +28,7 @@ class WindowEvents {
     // Pass resizeEvents object to scroll listener
     // in order to have access to window height, width
     const scrollEvents = new ScrollEvents(publisher, this.options, resizeEvents);
+    const visibilityEvents = new VisibilityEvents(publisher, this.options);
 
     window.addEventListener('scroll', debounce(
       // Delay
@@ -61,9 +63,12 @@ class WindowEvents {
       resizeEvents.throttledListener,
     ));
 
+    window.addEventListener('visibilitychange', visibilityEvents.changeListenter);
+
     this.getState = () => ({
       ...resizeEvents.getState(),
       ...scrollEvents.getState(),
+      ...visibilityEvents.getState(),
     });
   }
 }

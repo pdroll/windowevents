@@ -1,7 +1,7 @@
 # WindowEvents.js
-Easily add event listeners to useful scroll and resize events: scroll start, scroll stop, resize stop, orientation change, and more.
+Makes adding event listeners to useful scroll, resize and page visibility events a breeze. Events include scroll start, scroll stop, resize stop, orientation change, window becoming visible and more.
 
-This library handles the throttling of the event listeners for you, does not require jQuery, and is under 8KB in size.
+This library handles the throttling of the event listeners for you, does not require jQuery, and is under 9KB in size.
 
 ## Install
 You can install this in a couple ways:
@@ -29,7 +29,7 @@ var WindowEvents = require('windowevents');
 Include library script tag before your application JS.
 
 ```html
-<script src="https://unpkg.com/windowevents@0.1.2/windowevents.min.js"></script>
+<script src="//cdn.jsdelivr.net/windowevents/latest/windowevents.min.js"></script>
 ```
 
 After that has loaded, a  `WindowEvents` variable will be available on the `window` object.
@@ -72,8 +72,8 @@ Subscribe to a window event.
 
 ```javascript
 // Subscribe to the 'scroll.stop' event
-winEvents.on('scroll.stop', function(scrollTop) {
-    doSomething(scrollTop)
+winEvents.on('scroll.stop', function(scrollData) {
+    doSomething(scrollData.scrollPercent)
 });
 ```
 
@@ -84,8 +84,8 @@ Subscribe to an event only once.
 
 ```javascript
 // Function will only fire for first time you scroll to the bottom of the page
-winEvents.once('scroll.bottom', function(scrollTop) {
-    doSomethingOnce(scrollTop)
+winEvents.once('scroll.bottom', function(scrollData) {
+    doSomethingOnce(scrollData.scrollTop)
 });
 ```
 
@@ -105,11 +105,11 @@ Unsubscribe one specific listener to an event.
 You'll need to save the token returned by your call to `winEvents.on()`
 
 ```javascript
-var firstListener = winEvents.on('scroll.down', function(scrollTop) {
+var firstListener = winEvents.on('scroll.down', function(scrollData) {
   console.log('We are scrolling down the page');
 });
 
-var secondListener = winEvents.on('scroll.down', function(scrollTop) {
+var secondListener = winEvents.on('scroll.down', function(scrollData) {
   console.log('Another listener for scrolling down');
 });
 
@@ -130,6 +130,8 @@ Immediately get current size and scroll position of window. Returns an object wi
 - `orientation` ("portrait" or "landscape")
 - `scrollHeight`
 - `scrollTop`
+- `scrollPercent`
+- `visible`
 
 ## Events
 
@@ -137,7 +139,10 @@ The following events are available to subscribe to:
 
 ### Scroll Events
 
-All scroll listeners will recieve one parameter, the interger of the current window scrollTop.
+All scroll listeners will receive one parameter, an object with the following properties:
+
+- `scrollTop`
+- `scrollPercent`
 
 |   Event Name    | Description |
 |-----------------|-------------|
@@ -151,8 +156,7 @@ All scroll listeners will recieve one parameter, the interger of the current win
 
 ### Resize Events
 
-
-All resize listeners will recieve one parameter, an object with the following properties:
+All resize listeners will receive one parameter, an object with the following properties:
 
 - `width`
 - `height`
@@ -167,5 +171,16 @@ All resize listeners will recieve one parameter, an object with the following pr
 | `resize.scrollHeightChange` | Will fire when resizing has caused the `document.body.scrollHeight` to change.  |
 | `resize.stop`               | The window has stopped being resized. |
 
+### Visibility Events
 
+These events let you know when a webpage is visible or in focus, and they rely on the [Page Visibility API](https://developer.mozilla.org/docs/Web/API/Page_Visibility_API). Unfortunately, this API [isn't supported in IE 9 or older](http://caniuse.com/#feat=pagevisibility).
 
+All visibility listeners will receive one parameter, an object with the following property:
+
+- `visible` (`true` or `false`)
+
+|       Event Name        |   Description   |
+|-------------------------|-----------------|
+| `visibilityChange`      | The page visibility has changed. |
+| `visibilityChange.show` | The page was previously not visible and just became visible. |
+| `visibilityChange.hide` | The page was previously visible and just lost visibility. |

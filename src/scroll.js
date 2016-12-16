@@ -13,12 +13,18 @@ class ScrollEvents {
   getState() {
     return {
       scrollTop: this.scrollTop,
+      scrollPercent:
+        (this.scrollTop / (this.windowSize.scrollHeight - this.windowSize.height)) * 100,
     };
   }
 
   debouncedListener() {
     this.scrollTop = window.scrollY || window.pageYOffset;
-    this.signal('scroll.start', [this.scrollTop]);
+    this.signal('scroll.start', [{
+      scrollTop: this.scrollTop,
+      scrollPercent:
+        (this.scrollTop / (this.windowSize.scrollHeight - this.windowSize.height)) * 100,
+    }]);
 
     this.lastScrollTop = this.scrollTop;
   }
@@ -26,25 +32,31 @@ class ScrollEvents {
   throttledListener() {
     this.scrollTop = window.scrollY || window.pageYOffset;
 
-    this.signal('scroll', [this.scrollTop]);
+    const scrollObj = {
+      scrollTop: this.scrollTop,
+      scrollPercent:
+        (this.scrollTop / (this.windowSize.scrollHeight - this.windowSize.height)) * 100,
+    };
+
+    this.signal('scroll', [scrollObj]);
 
     if (this.scrollTop > this.lastScrollTop) {
-      this.signal('scroll.down', [this.scrollTop]);
+      this.signal('scroll.down', [scrollObj]);
     } else if (this.scrollTop < this.lastScrollTop) {
-      this.signal('scroll.up', [this.scrollTop]);
+      this.signal('scroll.up', [scrollObj]);
     }
 
     if (this.scrollTop <= 0) {
-      this.signal('scroll.top', [this.scrollTop]);
+      this.signal('scroll.top', [scrollObj]);
     }
 
-    if (this.scrollTop + this.windowSize.height >= this.windowSize.scrollHeight) {
-      this.signal('scroll.bottom', [this.scrollTop]);
+    if (scrollObj.scrollPercent >= 100) {
+      this.signal('scroll.bottom', [scrollObj]);
     }
 
     clearTimeout(this.scrollTimeout);
     this.scrollTimeout = setTimeout(() => {
-      this.signal('scroll.stop', [this.scrollTop]);
+      this.signal('scroll.stop', [scrollObj]);
     }, this.options.scrollDelay + 1);
 
     this.lastScrollTop = this.scrollTop;
