@@ -138,7 +138,7 @@ Immediately get current size, scroll position, and visibility of the window. Ret
 
 ### `winEvents.updateState()`
 
-This method is useful when some event, other than the window being resized, causes the window to page to change scroll height or scroll position.
+This method is useful when some event, other than the window being resized, causes the window to page to change scroll height or scroll position. Examples could be more content being loaded or an element being hidden or shown.
 
 Returns an object with the following properties:
 
