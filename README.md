@@ -1,7 +1,10 @@
 # WindowEvents.js
 Makes adding event listeners to useful scroll, resize and page visibility events a breeze. Events include scroll start, scroll stop, resize stop, orientation change, window becoming visible and more.
 
-This library handles the throttling of the event listeners for you, does not require jQuery, and is under 9KB in size.
+This library handles the throttling of the event listeners for you, does not require jQuery, and is only 9KB in size.
+
+## Demo
+[See it in action](http://codepen.io/pdroll/pen/RoqRzY?editors=0010)
 
 ## Install
 You can install this in a couple ways:
@@ -123,7 +126,21 @@ winEvents.off('scroll.down', firstListener);
 
 ### `winEvents.getState()`
 
-Immediately get current size and scroll position of window. Returns an object with the following properties:
+Immediately get current size, scroll position, and visibility of the window. Returns an object with the following properties:
+
+- `width`
+- `height`
+- `orientation` ("portrait" or "landscape")
+- `scrollHeight`
+- `scrollTop`
+- `scrollPercent`
+- `visible`
+
+### `winEvents.updateState()`
+
+This method is useful when some event, other than the window being resized, causes the window to page to change scroll height or scroll position.
+
+Returns an object with the following properties:
 
 - `width`
 - `height`

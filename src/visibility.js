@@ -3,9 +3,13 @@ class VisibilityEvents {
     this.signal = publisher.signal;
     this.options = options;
 
-    this.visible = !document.hidden;
-
     this.changeListenter = this.changeListenter.bind(this);
+
+    this.updateState();
+  }
+
+  updateState() {
+    this.visible = !document.hidden;
   }
 
   getState() {

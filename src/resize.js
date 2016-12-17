@@ -2,14 +2,19 @@ class ResizeEvents {
   constructor(publisher, options) {
     this.signal = publisher.signal;
     this.options = options;
-    this.height = this.lastH = window.innerHeight;
-    this.width = this.lastW = window.innerWidth;
-    this.scrollHeight = this.lastS = document.body.scrollHeight;
-    this.orientation = this.lastO = this.height > this.width ? 'portrait' : 'landscape';
     this.resizeTimeout = null;
 
     this.debouncedListener = this.debouncedListener.bind(this);
     this.throttledListener = this.throttledListener.bind(this);
+
+    this.updateState();
+  }
+
+  updateState() {
+    this.height = this.lastH = window.innerHeight;
+    this.width = this.lastW = window.innerWidth;
+    this.scrollHeight = this.lastS = document.body.scrollHeight;
+    this.orientation = this.lastO = this.height > this.width ? 'portrait' : 'landscape';
   }
 
   getState() {

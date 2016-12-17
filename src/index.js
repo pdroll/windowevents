@@ -70,6 +70,13 @@ class WindowEvents {
       ...scrollEvents.getState(),
       ...visibilityEvents.getState(),
     });
+
+    this.updateState = () => {
+      resizeEvents.updateState();
+      scrollEvents.updateState();
+      visibilityEvents.updateState();
+      return this.getState();
+    };
   }
 }
 

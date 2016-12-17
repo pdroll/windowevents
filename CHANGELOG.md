@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.3.0]
+### Added
+- Added `updateState` method, which is useful when an event other than window resize causes the page's scroll position or scroll height to change.
+
 ## [0.2.0] - 2016-12-15
 ### Added
 - Added window visibility events: `visibilityChange`, `visibilityChange.hide`, `visibilityChange.show`.
