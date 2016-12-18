@@ -10,6 +10,7 @@ import throttle from 'throttle-debounce/throttle';
 import ScrollEvents from './scroll';
 import ResizeEvents from './resize';
 import VisibilityEvents from './visibility';
+import LoadEvents from './load';
 
 class WindowEvents {
 
@@ -29,6 +30,22 @@ class WindowEvents {
     // in order to have access to window height, width
     const scrollEvents = new ScrollEvents(publisher, this.options, resizeEvents);
     const visibilityEvents = new VisibilityEvents(publisher, this.options);
+    const loadEvents = new LoadEvents(publisher, this.options);
+
+    this.getState = () => ({
+      ...resizeEvents.getState(),
+      ...scrollEvents.getState(),
+      ...visibilityEvents.getState(),
+      ...loadEvents.getState(),
+    });
+
+    this.updateState = () => {
+      resizeEvents.updateState();
+      scrollEvents.updateState();
+      visibilityEvents.updateState();
+      loadEvents.updateState();
+      return this.getState();
+    };
 
     window.addEventListener('scroll', debounce(
       // Delay
@@ -65,18 +82,12 @@ class WindowEvents {
 
     window.addEventListener('visibilitychange', visibilityEvents.changeListenter);
 
-    this.getState = () => ({
-      ...resizeEvents.getState(),
-      ...scrollEvents.getState(),
-      ...visibilityEvents.getState(),
+    document.addEventListener('readystatechange', () => {
+      // Update the state once all
+      // images and resources have loaded
+      this.updateState();
+      loadEvents.changeListenter();
     });
-
-    this.updateState = () => {
-      resizeEvents.updateState();
-      scrollEvents.updateState();
-      visibilityEvents.updateState();
-      return this.getState();
-    };
   }
 }
 

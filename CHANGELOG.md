@@ -3,7 +3,10 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [0.3.0]
+## [0.3.0] - 2016-12-17
+### Added window loaded events: `load`, `load.interactive`, and `load.complete`.
+
+## [0.3.0] - 2016-12-17
 ### Added
 - Added `updateState` method, which is useful when an event other than window resize causes the page's scroll position or scroll height to change.
 

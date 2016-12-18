@@ -1,7 +1,11 @@
 # WindowEvents.js
-Makes adding event listeners to useful scroll, resize and page visibility events a breeze. Events include scroll start, scroll stop, resize stop, orientation change, window becoming visible and more.
+Your one stop shop for listening for all window load, scroll, resize and visibility change events.
 
-This library handles the throttling of the event listeners for you, does not require jQuery, and is only 9KB in size.
+Provides a simple and unified interface for adding event listeners for 18 common and useful events including window loaded, scroll start, scroll stop, resize stop, orientation change, window becoming visible and more
+
+Makes adding event listeners to useful scroll, resize and page visibility events a breeze. Events include .
+
+This library handles the throttling of the event listeners when needed, does not require jQuery or any other external library, and is only 10KB in size.
 
 ## Demo
 [See it in action](http://codepen.io/pdroll/pen/RoqRzY?editors=0010)
@@ -135,6 +139,7 @@ Immediately get current size, scroll position, and visibility of the window. Ret
 - `scrollTop`
 - `scrollPercent`
 - `visible`
+- `loaded` ("loading", "interactive", or "complete")
 
 ### `winEvents.updateState()`
 
@@ -149,6 +154,7 @@ Returns an object with the following properties:
 - `scrollTop`
 - `scrollPercent`
 - `visible`
+- `loaded` ("loading", "interactive", or "complete")
 
 ## Events
 
@@ -201,3 +207,17 @@ All visibility listeners will receive one parameter, an object with the followin
 | `visibilityChange`      | The page visibility has changed. |
 | `visibilityChange.show` | The page was previously not visible and just became visible. |
 | `visibilityChange.hide` | The page was previously visible and just lost visibility. |
+
+### Load Events
+
+These events will notify you when the DOM has been parsed and when all images and resources have finished loading. They are based on the document `readystatechange` event.
+
+All load listeners will receive one parameter, an object with the following property:
+
+- `loaded` ("interactive" or "complete")
+
+|    Event Name      |   Description   |
+|--------------------|-----------------|
+| `load`             | There has been any change to `document.readyState`. Will fire twice on every page load. |
+| `load.interactive` | The DOM has been parsed and is ready to be interacted with. |
+| `load.complete`    | All images and resources within the page have finished loading. |
