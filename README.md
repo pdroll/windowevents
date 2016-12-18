@@ -1,9 +1,7 @@
 # WindowEvents.js
 Your one stop shop for listening for all window load, scroll, resize and visibility change events.
 
-Provides a simple and unified interface for adding event listeners for 18 common and useful events including window loaded, scroll start, scroll stop, resize stop, orientation change, window becoming visible and more
-
-Makes adding event listeners to useful scroll, resize and page visibility events a breeze. Events include .
+Provides a simple and unified interface for adding event listeners for 18 common and useful events including window loaded, scroll start, scroll stop, resize stop, orientation change, window becoming visible and more.
 
 This library handles the throttling of the event listeners when needed, does not require jQuery or any other external library, and is only 10KB in size.
 
@@ -219,5 +217,5 @@ All load listeners will receive one parameter, an object with the following prop
 |    Event Name      |   Description   |
 |--------------------|-----------------|
 | `load`             | There has been any change to `document.readyState`. Will fire twice on every page load. |
-| `load.interactive` | The DOM has been parsed and is ready to be interacted with. |
+| `load.interactive` | The DOM has been parsed and is ready to be interacted with. Equivalent to [jQuery's document ready](https://learn.jquery.com/using-jquery-core/document-ready/) event. |
 | `load.complete`    | All images and resources within the page have finished loading. |
