@@ -54,7 +54,7 @@ class WindowEvents {
       true,
       // Debounced function
       scrollEvents.debouncedListener,
-    ));
+    ), false);
     window.addEventListener('scroll', throttle(
       // Delay
       this.options.scrollDelay,
@@ -62,7 +62,7 @@ class WindowEvents {
       false,
       // Throttled function
       scrollEvents.throttledListener,
-    ));
+    ), false);
     window.addEventListener('resize', debounce(
       // Delay
       this.options.resizeDelay,
@@ -70,7 +70,7 @@ class WindowEvents {
       true,
       // Debounced function
       resizeEvents.debouncedListener,
-    ));
+    ), false);
     window.addEventListener('resize', throttle(
       // Delay
       this.options.resizeDelay,
@@ -78,16 +78,16 @@ class WindowEvents {
       false,
       // Throttled function
       resizeEvents.throttledListener,
-    ));
+    ), false);
 
-    window.addEventListener('visibilitychange', visibilityEvents.changeListenter);
+    window.addEventListener('visibilitychange', visibilityEvents.changeListenter, false);
 
     document.addEventListener('readystatechange', () => {
       // Update the state once all
       // images and resources have loaded
       this.updateState();
       loadEvents.changeListenter();
-    });
+    }, false);
   }
 }
 
