@@ -29,4 +29,3 @@ jobs:
     - run: npm run lint
     # TODO: Add this back in
     # - run: npm test -- --ci --verbose
-
