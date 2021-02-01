@@ -1,38 +1,38 @@
 class VisibilityEvents {
-  constructor(publisher, options) {
-    this.signal = publisher.signal;
-    this.options = options;
+  constructor (publisher, options) {
+    this.signal = publisher.signal
+    this.options = options
 
-    this.changeListenter = this.changeListenter.bind(this);
+    this.changeListenter = this.changeListenter.bind(this)
 
-    this.updateState();
+    this.updateState()
   }
 
-  updateState() {
-    this.visible = !document.hidden;
+  updateState () {
+    this.visible = !document.hidden
   }
 
-  getState() {
+  getState () {
     return {
-      visible: this.visible,
-    };
+      visible: this.visible
+    }
   }
 
-  changeListenter() {
-    this.visible = !document.hidden;
+  changeListenter () {
+    this.visible = !document.hidden
 
     const visibleObj = {
-      visible: this.visible,
-    };
+      visible: this.visible
+    }
 
-    this.signal('visibilityChange', [visibleObj]);
+    this.signal('visibilityChange', [visibleObj])
 
     if (this.visible) {
-      this.signal('visibilityChange.show', [visibleObj]);
+      this.signal('visibilityChange.show', [visibleObj])
     } else {
-      this.signal('visibilityChange.hide', [visibleObj]);
+      this.signal('visibilityChange.hide', [visibleObj])
     }
   }
 }
 
-export default VisibilityEvents;
+export default VisibilityEvents

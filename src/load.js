@@ -1,38 +1,38 @@
 class LoadEvents {
-  constructor(publisher, options) {
-    this.signal = publisher.signal;
-    this.options = options;
+  constructor (publisher, options) {
+    this.signal = publisher.signal
+    this.options = options
 
-    this.changeListenter = this.changeListenter.bind(this);
+    this.changeListenter = this.changeListenter.bind(this)
 
-    this.updateState();
+    this.updateState()
   }
 
-  updateState() {
-    this.loaded = document.readyState;
+  updateState () {
+    this.loaded = document.readyState
   }
 
-  getState() {
+  getState () {
     return {
-      loaded: this.loaded,
-    };
+      loaded: this.loaded
+    }
   }
 
-  changeListenter() {
-    this.loaded = document.readyState;
+  changeListenter () {
+    this.loaded = document.readyState
 
     const loadedObj = {
-      loaded: this.loaded,
-    };
+      loaded: this.loaded
+    }
 
-    this.signal('load', [loadedObj]);
+    this.signal('load', [loadedObj])
 
     if (this.loaded === 'interactive') {
-      this.signal('load.interactive', [loadedObj]);
+      this.signal('load.interactive', [loadedObj])
     } else if (this.loaded === 'complete') {
-      this.signal('load.complete', [loadedObj]);
+      this.signal('load.complete', [loadedObj])
     }
   }
 }
 
-export default LoadEvents;
+export default LoadEvents
