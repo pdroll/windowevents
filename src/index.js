@@ -90,4 +90,4 @@ class WindowEvents {
   }
 }
 
-module.exports = WindowEvents
+export default WindowEvents
