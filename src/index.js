@@ -1,4 +1,3 @@
-
 /*!
  * WindowEvents.js
  * @author Pete Droll <droll.p@gmail.com>
