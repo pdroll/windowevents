@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-context('Scrolling events', () => {
+describe('Scrolling events', () => {
   beforeEach(() => {
     cy.clock()
     cy.visit('./cypress/test.html')

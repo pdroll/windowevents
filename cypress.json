@@ -1,4 +1,8 @@
 {
   "viewportHeight": 500,
-  "viewportWidth": 1000
+  "viewportWidth": 1000,
+  "supportFile": false,
+  "pluginsFile": false,
+  "video": false,
+  "screenshotOnRunFailure": false
 }
