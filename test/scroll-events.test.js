@@ -1,4 +1,4 @@
-const WindowEvents =  require('../windowevents')
+const WindowEvents = require('../windowevents')
 const { fireEvent } = require('@testing-library/dom')
 const { objectContaining } = expect
 
@@ -16,9 +16,9 @@ describe('scroll events', () => {
 
     winEvents.on('scroll.down', callback)
 
-    await fireEvent.scroll(window, { target: { scrollY: 311 } });
-    await fireEvent.scroll(window, { target: { scrollY: 384 } });
-    jest.runAllTimers();
+    await fireEvent.scroll(window, { target: { scrollY: 311 } })
+    await fireEvent.scroll(window, { target: { scrollY: 384 } })
+    jest.runAllTimers()
 
     expect(callback).toHaveBeenCalledWith({ scrollTop: 384, scrollPercent: 50 })
   })
@@ -29,9 +29,9 @@ describe('scroll events', () => {
 
     winEvents.on('scroll.up', callback)
 
-    await fireEvent.scroll(window, { target: { scrollY: 311 } });
-    await fireEvent.scroll(window, { target: { scrollY: 192 } });
-    jest.runAllTimers();
+    await fireEvent.scroll(window, { target: { scrollY: 311 } })
+    await fireEvent.scroll(window, { target: { scrollY: 192 } })
+    jest.runAllTimers()
 
     expect(callback).toHaveBeenCalledWith({ scrollTop: 192, scrollPercent: 25 })
   })
@@ -42,9 +42,9 @@ describe('scroll events', () => {
 
     winEvents.on('scroll.bottom', callback)
 
-    await fireEvent.scroll(window, { target: { scrollY: 311 } });
-    await fireEvent.scroll(window, { target: { scrollY: 768 } });
-    jest.runAllTimers();
+    await fireEvent.scroll(window, { target: { scrollY: 311 } })
+    await fireEvent.scroll(window, { target: { scrollY: 768 } })
+    jest.runAllTimers()
 
     expect(callback).toHaveBeenCalledWith({ scrollTop: 768, scrollPercent: 100 })
   })
@@ -55,9 +55,9 @@ describe('scroll events', () => {
 
     winEvents.on('scroll.top', callback)
 
-    await fireEvent.scroll(window, { target: { scrollY: 311 } });
-    await fireEvent.scroll(window, { target: { scrollY: 0 } });
-    jest.runAllTimers();
+    await fireEvent.scroll(window, { target: { scrollY: 311 } })
+    await fireEvent.scroll(window, { target: { scrollY: 0 } })
+    jest.runAllTimers()
 
     expect(callback).toHaveBeenCalledWith({ scrollTop: 0, scrollPercent: 0 })
   })
@@ -70,7 +70,7 @@ describe('scroll events', () => {
     winEvents.on('scroll.start', startCallback)
     winEvents.on('scroll.stop', stopCallback)
 
-    await fireEvent.scroll(window, { target: { scrollY: 384 } });
+    await fireEvent.scroll(window, { target: { scrollY: 384 } })
 
     expect(startCallback).toHaveBeenCalledWith({ scrollTop: 384, scrollPercent: 50 })
     expect(stopCallback).not.toHaveBeenCalled()
@@ -83,7 +83,7 @@ describe('scroll events', () => {
   it('includes scroll data in getInfo', async () => {
     const winEvents = new WindowEvents()
 
-    await fireEvent.scroll(window, { target: { scrollY: 576 } });
+    await fireEvent.scroll(window, { target: { scrollY: 576 } })
 
     expect(winEvents.getState()).toEqual(objectContaining({
       scrollTop: 576,
@@ -94,7 +94,7 @@ describe('scroll events', () => {
   it('updateState updates scroll percentage when page changes height', async () => {
     const winEvents = new WindowEvents()
 
-    await fireEvent.scroll(window, { target: { scrollY: 768 } });
+    await fireEvent.scroll(window, { target: { scrollY: 768 } })
 
     expect(winEvents.getState()).toEqual(objectContaining({
       scrollTop: 768,

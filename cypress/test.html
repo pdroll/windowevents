@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WindowEvents</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .content  {
+        height: 1000px;
+        background: rgb(34,193,195);
+        background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(102,51,153,1) 100%);
+      }
+
+      .content.flipped {
+        background: rgba(102,51,153,1);
+        background: linear-gradient(0deg, rgba(102,51,153,1) 0%, rgba(34,193,195,1) 100%);
+      }
+
+      .hidden {
+        display: none;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="content"></div>
+    <div class="content flipped hidden" id="hidden-content"></div>
+
+    <script src="../../windowevents.js"></script>
+  </body>
+</html>
