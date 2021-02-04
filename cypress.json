@@ -4,5 +4,6 @@
   "supportFile": false,
   "pluginsFile": false,
   "video": false,
-  "screenshotOnRunFailure": false
+  "screenshotOnRunFailure": false,
+  "fixturesFolder": false
 }

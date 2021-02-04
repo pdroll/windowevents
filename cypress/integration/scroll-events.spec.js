@@ -15,7 +15,7 @@ describe('Scrolling events', () => {
       winEvents.on('scroll.down', callback)
 
       cy.scrollTo(0, 250, { duration: 100 })
-      cy.tick(100)
+      cy.tick(300)
     }).then(() => {
       expect(callback).to.be.calledWith({ scrollTop: 250, scrollPercent: 50 })
     })
@@ -31,7 +31,7 @@ describe('Scrolling events', () => {
 
       cy.scrollTo(0, 250)
       cy.scrollTo(0, 50, { duration: 100 })
-      cy.tick(100)
+      cy.tick(300)
     }).then(() => {
       expect(callback).to.be.calledWith({ scrollTop: 50, scrollPercent: 10 })
     })
@@ -46,7 +46,7 @@ describe('Scrolling events', () => {
       winEvents.on('scroll.bottom', callback)
 
       cy.scrollTo(0, 500, { duration: 100 })
-      cy.tick(100)
+      cy.tick(300)
     }).then(() => {
       expect(callback).to.be.calledWith({ scrollTop: 500, scrollPercent: 100 })
     })
@@ -62,7 +62,7 @@ describe('Scrolling events', () => {
 
       cy.scrollTo(0, 250)
       cy.scrollTo(0, 0, { duration: 100 })
-      cy.tick(100)
+      cy.tick(300)
     }).then(() => {
       expect(callback).to.be.calledWith({ scrollTop: 0, scrollPercent: 0 })
     })
@@ -97,7 +97,7 @@ describe('Scrolling events', () => {
       winEvents = new window.WindowEvents()
 
       cy.scrollTo(0, 300, { duration: 100 })
-      cy.tick(100)
+      cy.tick(300)
     }).then(() => {
       expect(winEvents.getState()).to.include({
         scrollTop: 300,
@@ -105,7 +105,14 @@ describe('Scrolling events', () => {
       })
     }).then(() => {
       cy.window().then((window) => {
+        // Show a block of content, simulating some
+        // dynamic content getting added to the page
+        // and changing the scrolling height of the page
         window.document.getElementById('hidden-content').classList.remove('hidden')
+
+        // Calling updateState after this will update
+        // all references to page size and related
+        // scroll position
         winEvents.updateState()
       })
     }).then(() => {

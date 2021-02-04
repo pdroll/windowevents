@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
       body {
+        background: rgba(102,51,153,1);
         margin: 0;
         padding: 0;
       }
 
       .content  {
-        height: 1000px;
+        font-size: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        min-height: 1000px;
         background: rgb(34,193,195);
         background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(102,51,153,1) 100%);
       }
@@ -27,7 +31,21 @@
     </style>
   </head>
   <body>
-    <div class="content"></div>
+    <div class="content">
+      <h1>Here lies some content</h1>
+
+      <h2>This content should be less than 1000px in height, unless viewed on a narrow viewport.</h2>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet convallis felis. Pellentesque nunc ex, ultrices rhoncus rhoncus ac, imperdiet in quam. Nam faucibus in odio sed porttitor. Proin accumsan orci sed sapien sagittis, ut iaculis est pretium. Pellentesque mattis ligula eu orci hendrerit fermentum. Duis a tristique augue, sed efficitur nunc. Mauris vel odio vulputate, facilisis metus eget, iaculis lorem. Suspendisse a eros vehicula, tincidunt elit semper, dignissim libero. Maecenas porta orci aliquam dolor ullamcorper, quis ullamcorper ipsum imperdiet. Morbi in eleifend erat. Nulla lectus elit, ornare vitae nulla sed, eleifend blandit nibh. Nulla in turpis lobortis, rhoncus enim a, euismod urna.</p>
+
+      <p>Donec facilisis, leo ac gravida lacinia, ante dui rhoncus ex, id vestibulum lacus neque in lectus. In vel elit augue. Curabitur tincidunt massa nec odio ullamcorper faucibus. Proin ullamcorper est ac augue aliquam maximus. Proin a ipsum neque. Morbi non eros vitae lectus rhoncus facilisis. Ut suscipit efficitur dolor a facilisis. Nullam feugiat id erat ultricies ultricies. Nunc dictum nulla arcu, eu ullamcorper augue dapibus non. Nam ac ullamcorper est. Sed nec ipsum porttitor ex congue egestas sed nec diam. Vivamus dignissim tellus eu varius tincidunt.</p>
+
+      <p>Aenean sed sodales est, vel mollis justo. Nam consequat lectus mi, eget cursus purus sagittis in. Quisque sed ultricies lectus, id suscipit risus. Aenean dictum turpis nisl, et efficitur risus finibus nec. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque blandit scelerisque felis, nec fermentum nunc lacinia sit amet. Aenean porta, erat in viverra posuere, ex lorem varius quam, at placerat sem erat ac lorem. Etiam fermentum consectetur blandit. Suspendisse bibendum a tellus quis ornare. Praesent nibh nulla, efficitur vitae pulvinar at, facilisis at dui.</p>
+
+      <p>Fusce quis condimentum metus. Mauris at odio eu metus dapibus finibus. Vivamus cursus lacus pulvinar dui volutpat eleifend. Maecenas malesuada, lacus ac lacinia sagittis, tellus mauris elementum orci, id dignissim ante ipsum sed velit. Etiam vel mattis sem. Maecenas ac urna erat. In ultrices sem magna, ut efficitur lectus scelerisque volutpat. Pellentesque volutpat sem justo, et viverra libero elementum a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ornare in nulla vel faucibus. Quisque ut massa nulla. Aliquam placerat eget dolor in aliquet. Vestibulum risus tortor, ullamcorper condimentum nisi ac, faucibus cursus tortor. Quisque viverra accumsan felis vitae consequat. Donec in sem felis.</p>
+
+      <p>Integer et massa mollis, auctor ante non, suscipit justo. Nulla at ligula sed ante posuere tristique et in dui. Fusce et tincidunt ipsum. Suspendisse potenti. Suspendisse eget ipsum tincidunt, accumsan lacus sed, cursus nisl. Sed sodales rutrum laoreet. Fusce hendrerit ex et feugiat consectetur. Praesent non metus sed nulla luctus sagittis. Suspendisse mattis interdum ante ut pulvinar. Nunc id nisi at ligula sollicitudin lacinia. Proin ut est libero. Vivamus in enim cursus, varius neque eu, fringilla mauris. Nullam efficitur nibh et tellus sodales, a cursus sapien semper. Aliquam eget ultricies arcu.</p>
+    </div>
     <div class="content flipped hidden" id="hidden-content"></div>
 
     <script src="../../windowevents.js"></script>
