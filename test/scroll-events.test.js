@@ -5,11 +5,11 @@ const { objectContaining } = expect
 beforeEach(() => {
   // Mock the scroll height of the body
   Object.defineProperty(document.body, 'scrollHeight', {
-    writable: true, configurable: true, value: 1536
+    writable: true, value: 1536
   })
 })
 
-describe('scroll events', () => {
+describe('Scroll events', () => {
   it('publishes scroll.down event', async () => {
     const winEvents = new WindowEvents()
     const callback = jest.fn()
