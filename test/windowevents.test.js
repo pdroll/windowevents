@@ -1,11 +1,6 @@
 const WindowEvents = require('../windowevents')
 
 describe('WindowEvents', () => {
-  describe('options', () => {
-    it.skip('allows the default scroll delay to be overridden', () => {})
-
-    it.skip('allows the default resize delay to be overridden', () => {})
-  })
   describe('#on', () => {
     it('adds event listeners for all future events', () => {
       const winEvents = new WindowEvents()
