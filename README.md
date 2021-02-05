@@ -3,7 +3,7 @@ Your one stop shop for listening for all window load, scroll, resize and visibil
 
 Provides a simple and unified interface for adding event listeners for 18 common and useful events including window loaded, scroll start, scroll stop, resize stop, orientation change, window becoming visible and more.
 
-This library handles the throttling of the event listeners when needed, does not require jQuery or any other external library, and is only 10KB in size.
+This library handles the throttling of the event listeners when needed, does not require jQuery or any other external library, and is less than 9KB in size.
 
 ## Demo
 [See it in action](http://codepen.io/pdroll/pen/RoqRzY?editors=0010)
