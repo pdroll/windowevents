@@ -2,6 +2,42 @@ const WindowEvents = require('../windowevents')
 const { objectContaining } = expect
 
 describe('Resize events', () => {
+  describe('resize delay', () => {
+    describe('with customs options', () => {
+      it('throttles scroll events to the delay specified', () => {
+        const winEvents = new WindowEvents({ resizeDelay: 500 })
+        const callback = jest.fn()
+
+        winEvents.on('resize', callback)
+        window.resizeTo(1000, 700)
+        window.resizeTo(900, 650)
+
+        jest.advanceTimersByTime(400)
+        expect(callback).toHaveBeenCalledTimes(1)
+
+        jest.advanceTimersByTime(101)
+        expect(callback).toHaveBeenCalledTimes(2)
+      })
+    })
+
+    describe('with default options', () => {
+      it('throttles scroll events to 350ms', () => {
+        const winEvents = new WindowEvents()
+        const callback = jest.fn()
+
+        winEvents.on('resize', callback)
+        window.resizeTo(1000, 700)
+        window.resizeTo(900, 650)
+
+        jest.advanceTimersByTime(300)
+        expect(callback).toHaveBeenCalledTimes(1)
+
+        jest.advanceTimersByTime(51)
+        expect(callback).toHaveBeenCalledTimes(2)
+      })
+    })
+  })
+
   it('publishes resize.start event', async () => {
     const winEvents = new WindowEvents()
     const callback = jest.fn()

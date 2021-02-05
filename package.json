@@ -43,7 +43,18 @@
     "standard": "^16.0.3"
   },
   "standard": {
-    "env": ["browser"],
-    "globals": ["cy", "Cypress", "expect", "it", "jest", "beforeEach", "describe", "context"]
+    "env": [
+      "browser"
+    ],
+    "globals": [
+      "cy",
+      "Cypress",
+      "expect",
+      "it",
+      "jest",
+      "beforeEach",
+      "describe",
+      "context"
+    ]
   }
 }
