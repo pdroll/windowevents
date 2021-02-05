@@ -1,0 +1,98 @@
+body {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  color: #fff;
+  font-size: 1.3em;
+  font-style: italic;
+  float: left;
+}
+
+.comments.hide {
+  display: none;
+}
+
+.nav {
+  float: right;
+  margin: 0;
+}
+
+.nav li {
+  display: inline-block;
+}
+
+.nav a {
+  color: #fff;
+}
+
+.banner {
+  display: block;
+  margin: 0;
+}
+
+.banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1em;
+  transition: all 0.2s;
+  transform: translateY(0);
+}
+
+header.hide {
+  transform: translateY(-100%);
+}
+
+video {
+  width: 100%;
+}
+
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 6em auto;
+  display: block;
+}
+
+.next-link {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background: rgba(100,100,100,0.9);
+  transition: all 0.2s;
+  transform: translateX(100%);
+  z-index: 1;
+}
+
+.next-link.show {
+  transform: translateX(0);
+}
+
+.next-link a {
+  color: #fff;
+  display: block;
+  padding: 1em 3em;
+  text-decoration: none;
+
+}
+
+.progress {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  height: 6px;
+  background: violet;
+  transition: all .2s;
+}

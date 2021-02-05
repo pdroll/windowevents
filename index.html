@@ -1,0 +1,196 @@
+<!-- Checkout demo.js to see example usage of WindowEvents-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>WindowEvents Demo</title>
+
+    <script>
+      console.log('Checkout demo.js to see example usage of WindowEvents')
+    </script>
+
+    <link href="demo.css" rel="stylesheet">
+  </head>
+  <body class="no-js">
+    <header data-header>
+      <span class="logo">Logo</span>
+      <ul class="nav">
+        <li><a href="#0">Link 1</a></li>
+        <li><a href="#0">Link 2</a></li>
+        <li><a href="#0">Link 3</a></li>
+      </ul>
+    </header>
+
+    <aside class="banner">
+      <img src="https://www.fillmurray.com/1000/300" alt="Lorem Ipsum Dolor" />
+    </aside>
+
+    <main class="container">
+      <h1><a href="https://github.com/pdroll/windowevents">WindowEvents.js</a> Demo</h1>
+
+      <video width="480" autoplay controls data-video>
+        <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-webm-file.webm" type="video/webm">
+        <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4" type="video/mp4">
+      </video>
+
+      <hr />
+      <p>This video will automatically pause if this window looses visibilty, and resume playing when the window becomes visible again.</p>
+
+      <p>The small bar across the bottom of the screen shows your progress of scrolling through the article.</p>
+
+      <p>Once we'ved scrolled most of the way through the article, we'll show a link to the next article.</p>
+
+      <p>Click the Load Comments button at the bottom of the page to see how to handle dynamic page changes.</p>
+
+      <hr />
+
+      <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em>    Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci,
+        sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+
+      <h2>Header Level 2</h2>
+
+      <ol>
+        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+        <li>Aliquam tincidunt mauris eu risus.</li>
+      </ol>
+
+      <blockquote>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis
+          elit sit amet quam. Vivamus pretium ornare est.</p>
+      </blockquote>
+
+
+      <ul>
+        <li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</li>
+        <li>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</li>
+        <li>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</li>
+        <li>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</li>
+      </ul>
+      <h2>Header Level 2</h2>
+
+      <ol>
+        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+        <li>Aliquam tincidunt mauris eu risus.</li>
+      </ol>
+
+      <blockquote>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis
+          elit sit amet quam. Vivamus pretium ornare est.</p>
+      </blockquote>
+
+      <h3>Header Level 3</h3>
+
+      <ul>
+        <li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</li>
+        <li>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</li>
+        <li>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</li>
+        <li>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</li>
+      </ul>
+      <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em>    Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci,
+        sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+
+      <h2>Header Level 2</h2>
+
+      <ol>
+        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+        <li>Aliquam tincidunt mauris eu risus.</li>
+      </ol>
+
+      <blockquote>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis
+          elit sit amet quam. Vivamus pretium ornare est.</p>
+      </blockquote>
+
+      <h3>Header Level 3</h3>
+
+      <ul>
+        <li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</li>
+        <li>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</li>
+        <li>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</li>
+        <li>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</li>
+      </ul>
+      <h2>Header Level 2</h2>
+
+      <ol>
+        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+        <li>Aliquam tincidunt mauris eu risus.</li>
+      </ol>
+
+      <blockquote>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis
+          elit sit amet quam. Vivamus pretium ornare est.</p>
+      </blockquote>
+
+      <h3>Header Level 3</h3>
+
+      <ul>
+        <li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</li>
+        <li>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</li>
+        <li>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</li>
+        <li>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</li>
+      </ul>
+
+      <button data-show-comments>Load Comments</button>
+      <div data-comments class="comments hide">
+        <hr />
+        <h2>Comments</h2>
+        <h3>Showing these comments caused the page's scroll height to change.</h3>
+        <p>Calling <code>winEvents.updateState()</code> will keep the WindowEvents up to date.</p>
+        <ul>
+          <li>
+            <h3>John Doe</h3>
+            <h4>Jan 15, 2021</h4>
+            <p>raesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+          </li>
+          <li>
+            <h3>John Doe</h3>
+            <h4>Jan 15, 2021</h4>
+            <p>raesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+          </li>
+          <li>
+            <h3>John Doe</h3>
+            <h4>Jan 15, 2021</h4>
+            <p>raesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+          </li>
+          <li>
+            <h3>John Doe</h3>
+            <h4>Jan 15, 2021</h4>
+            <p>raesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+          </li>
+          <li>
+            <h3>John Doe</h3>
+            <h4>Jan 15, 2021</h4>
+            <p>raesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+          </li>
+          <li>
+            <h3>John Doe</h3>
+            <h4>Jan 15, 2021</h4>
+            <p>raesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+          </li>
+          <li>
+            <h3>John Doe</h3>
+            <h4>Jan 15, 2021</h4>
+            <p>raesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+          </li>
+          <li>
+            <h3>John Doe</h3>
+            <h4>Jan 15, 2021</h4>
+            <p>raesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+          </li>
+        </ul>
+      </div>
+    </main>
+
+    <nav class="next-link" data-next-link>
+      <a href="#0">Read Next Article &raquo;</a>
+    </nav>
+
+    <div class="progress" data-progress></div>
+
+    <script src="./windowevents.js"></script>
+    <script src="./demo.js"></script>
+  </body>
+</html>
