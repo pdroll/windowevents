@@ -1,13 +1,6 @@
 const WindowEvents = require('../windowevents')
 const { objectContaining } = expect
 
-beforeEach(() => {
-  // Mock the document.hidden property
-  Object.defineProperty(document, 'hidden', {
-    writable: true, value: false
-  })
-})
-
 describe('Page visibility events', () => {
   it('publishes visibilityChange.hide event', async () => {
     const winEvents = new WindowEvents()

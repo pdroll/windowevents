@@ -1,25 +1,6 @@
 const WindowEvents = require('../windowevents')
 const { objectContaining } = expect
 
-// Simulate window resize event
-const resizeEvent = document.createEvent('Event')
-resizeEvent.initEvent('resize', true, true)
-
-global.window.resizeTo = (width, height) => {
-  global.window.innerWidth = width || global.window.innerWidth
-  global.window.innerHeight = height || global.window.innerHeight
-  global.window.dispatchEvent(resizeEvent)
-}
-
-beforeEach(() => {
-  window.resizeTo(1024, 768)
-
-  // Mock the scroll height of the body
-  Object.defineProperty(document.body, 'scrollHeight', {
-    writable: true, value: 2000
-  })
-})
-
 describe('Resize events', () => {
   it('publishes resize.start event', async () => {
     const winEvents = new WindowEvents()

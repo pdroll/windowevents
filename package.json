@@ -13,10 +13,10 @@
     "lint": "standard src cypress test",
     "start": "rollup -c -w",
     "build": "rollup -c",
-    "jest": "jest test --coverage --verbose",
-    "jest:watch": "jest test --watch",
-    "test": "cypress run",
-    "test:watch": "cypress open"
+    "test": "jest test --coverage --verbose",
+    "test:watch": "jest test --watch",
+    "cypress": "cypress run",
+    "cypress:watch": "cypress open"
   },
   "browserslist": [
     "> 0.5%",

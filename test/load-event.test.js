@@ -1,13 +1,6 @@
 const WindowEvents = require('../windowevents')
 const { objectContaining } = expect
 
-beforeEach(() => {
-  // Mock the document.readyState property
-  Object.defineProperty(document, 'readyState', {
-    writable: true, value: 'loading'
-  })
-})
-
 describe('Load events', () => {
   it('publishes load.interactive event', async () => {
     const winEvents = new WindowEvents()
