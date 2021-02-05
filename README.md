@@ -6,7 +6,7 @@ Provides a simple and unified interface for adding event listeners for 18 common
 This library handles the throttling of the event listeners when needed, does not require jQuery or any other external library, and is less than 9KB in size.
 
 ## Demo
-[See it in action](http://codepen.io/pdroll/pen/RoqRzY?editors=0010)
+[See it in action](https://pdroll.github.io/windowevents/)
 
 ## Install
 You can install this in a couple ways:

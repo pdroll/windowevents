@@ -1,6 +1,6 @@
 {
   "name": "windowevents",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Simple wrapper around common window events",
   "main": "windowevents.min.js",
   "license": "MIT",
