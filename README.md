@@ -126,6 +126,31 @@ winEvents.off('scroll.down', firstListener);
 // the second listener will continue to work.
 ```
 
+### `winEvents.off(eventName, functionReference)`
+
+You can also unsubscribe a listener from an event by passing in the same function
+that passed into the call to `on` or `once`
+
+```javascript
+var myCallback = function(scrollData) {
+  console.log('We are scrolling down the page');
+}
+
+var mySecondCallback = function(scrollData) {
+  console.log('A second listener for scrolling down');
+}
+
+winEvents.on('scroll.down', myCallback);
+winEvents.on('scroll.down', mySecondCallback);
+
+// Unsubscribe just the first Listener
+winEvents.off('scroll.down', myCallback);
+
+// myCallback no longer fire
+// when the window is scrolled down, but
+// mySecondCallback will continue to work.
+```
+
 ### `winEvents.getState()`
 
 Immediately get current size, scroll position, and visibility of the window. Returns an object with the following properties:
