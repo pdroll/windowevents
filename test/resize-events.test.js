@@ -103,8 +103,10 @@ describe('Resize events', () => {
 
     winEvents.on('resize.scrollHeightChange', callback)
 
+    window.resizeTo(720, 480)
+    window .resizeTo(320, 480)
     document.body.scrollHeight = 2500
-    window.resizeTo(320, 480)
+
     jest.runAllTimers()
     expect(callback).toHaveBeenCalledWith({
       orientation: 'portrait',

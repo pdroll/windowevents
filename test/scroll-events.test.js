@@ -33,10 +33,10 @@ describe('Scroll events', () => {
         window.scrollTo(0, 200)
         window.scrollTo(0, 311)
 
-        jest.advanceTimersByTime(99)
+        jest.advanceTimersByTime(90)
         expect(callback).toHaveBeenCalledTimes(1)
 
-        jest.advanceTimersByTime(2)
+        jest.advanceTimersByTime(12)
         expect(callback).toHaveBeenCalledTimes(2)
       })
     })

@@ -23,7 +23,7 @@
     "IE 10"
   ],
   "dependencies": {
-    "covjs": "^1.2.0",
+    "covjs": "^2.0.1",
     "throttle-debounce": "^1.0.1"
   },
   "devDependencies": {
