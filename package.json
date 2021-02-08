@@ -13,8 +13,8 @@
     "lint": "standard src test",
     "start": "rollup -c -w",
     "build": "rollup -c",
-    "test": "jest test --coverage --verbose",
-    "test:watch": "jest test --watch"
+    "test": "jest --coverage --verbose",
+    "test:watch": "jest --watch"
   },
   "browserslist": [
     "> 0.5%",
