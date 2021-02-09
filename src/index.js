@@ -3,7 +3,7 @@
  * @author Pete Droll <droll.p@gmail.com>
  * @license MIT
  */
-import publisher from 'covjs'
+import { Covenant } from 'covjs'
 import debounce from 'throttle-debounce/debounce'
 import throttle from 'throttle-debounce/throttle'
 import ScrollEvents from './scroll'
@@ -19,6 +19,8 @@ class WindowEvents {
     }
 
     this.options = opts ? { ...defaultOptions, ...opts } : defaultOptions
+
+    const publisher = new Covenant()
     this.on = publisher.on
     this.once = publisher.once
     this.off = publisher.off

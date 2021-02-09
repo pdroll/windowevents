@@ -16,7 +16,6 @@ global.window.resizeTo = (width, height) => {
   global.window.dispatchEvent(resizeEvent)
 }
 
-
 global.beforeEach(() => {
   jest.clearAllMocks();
   jest.useFakeTimers();
@@ -38,4 +37,9 @@ global.beforeEach(() => {
   Object.defineProperty(document, 'readyState', {
     writable: true, value: 'loading'
   })
+})
+
+
+global.afterEach(() => {
+  jest.runAllTimers();
 })

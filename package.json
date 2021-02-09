@@ -1,6 +1,6 @@
 {
   "name": "windowevents",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Simple wrapper around common window events",
   "main": "windowevents.min.js",
   "license": "MIT",
@@ -13,8 +13,8 @@
     "lint": "standard src test",
     "start": "rollup -c -w",
     "build": "rollup -c",
-    "test": "jest test --coverage --verbose",
-    "test:watch": "jest test --watch"
+    "test": "jest --coverage --verbose",
+    "test:watch": "jest --watch"
   },
   "browserslist": [
     "> 0.5%",
@@ -23,7 +23,7 @@
     "IE 10"
   ],
   "dependencies": {
-    "covjs": "^1.2.0",
+    "covjs": "^2.0.1",
     "throttle-debounce": "^1.0.1"
   },
   "devDependencies": {
